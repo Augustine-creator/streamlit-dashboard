@@ -9,6 +9,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest  # Uses a Linux environment
 
+    env:
+  ACTIONS_RUNNER_DEBUG: true
+  ACTIONS_STEP_DEBUG: true
+
+
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2  # Pulls the latest code from GitHub
