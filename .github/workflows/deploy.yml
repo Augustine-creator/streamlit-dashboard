@@ -1,0 +1,36 @@
+name: Deploy Streamlit App
+
+on:
+  push:
+    branches:
+      - main  # Runs when code is pushed to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Uses a Linux environment
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2  # Pulls the latest code from GitHub
+
+    - name: Authenticate with Google Cloud
+      uses: google-github-actions/auth@v1
+      with:
+        credentials_json: ${{ secrets.GCP_SA_KEY }}  # Uses Google Cloud Secret Key
+
+    - name: Set up Google Cloud SDK
+      uses: google-github-actions/setup-gcloud@v1
+      with:
+        project_id: tmdk-ai  # Replace with your actual Google Cloud Project ID
+
+    - name: Build and Push Docker Image
+      run: |
+        gcloud builds submit --tag gcr.io/tmdk-ai/streamlit-app
+
+    - name: Deploy to Cloud Run
+      run: |
+        gcloud run deploy streamlit-app \
+        --image gcr.io/tmdk-ai/streamlit-app \
+        --platform managed \
+        --region us-central1 \
+        --allow-unauthenticated
