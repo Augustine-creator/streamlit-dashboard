@@ -9,10 +9,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest  # Uses a Linux environment
 
-
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2  # Pulls the latest code from GitHub
+      uses: actions/checkout@v4  # Pulls the latest code from GitHub
 
     - name: Authenticate with Google Cloud
       uses: google-github-actions/auth@v1
@@ -24,6 +23,10 @@ jobs:
       with:
         project_id: tmdk-ai  # Replace with your actual Google Cloud Project ID
 
+    - name: Authenticate Docker with Google Cloud
+      run: |
+        gcloud auth configure-docker
+
     - name: Build and Push Docker Image
       run: |
         gcloud builds submit --tag gcr.io/tmdk-ai/streamlit-app
@@ -34,4 +37,7 @@ jobs:
         --image gcr.io/tmdk-ai/streamlit-app \
         --platform managed \
         --region us-central1 \
-        --allow-unauthenticated
+        --allow-unauthenticated \
+        --memory 512Mi \
+        --timeout 300s \
+        --port 8501
