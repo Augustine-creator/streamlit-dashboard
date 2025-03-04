@@ -1,0 +1,9 @@
+[component_manager]
+disable_update_check = true
+
+[compute]
+
+[core]
+account = augustine.mugendi@tmd.co.ke
+project = tmdk-ai
+

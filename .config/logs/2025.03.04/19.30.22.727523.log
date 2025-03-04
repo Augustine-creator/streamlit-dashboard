@@ -1,0 +1,10 @@
+2025-03-04 19:30:22,729 DEBUG    root            Loaded Command Group: ['gcloud', 'config']
+2025-03-04 19:30:23,271 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'set']
+2025-03-04 19:30:23,273 DEBUG    root            Running [gcloud.config.set] with arguments: [SECTION/PROPERTY: "project", VALUE: "tmdk-ai"]
+2025-03-04 19:30:23,431 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443
+2025-03-04 19:30:23,508 DEBUG    urllib3.connectionpool https://cloudresourcemanager.googleapis.com:443 "GET /v1/projects/tmdk-ai?alt=json HTTP/11" 200 None
+2025-03-04 19:30:23,510 INFO     ___FILE_ONLY___ Updated property [core/project].
+
+2025-03-04 19:30:23,510 DEBUG    root            Chosen display Format:default
+2025-03-04 19:30:23,511 INFO     root            Display format: "default"
+2025-03-04 19:30:23,511 DEBUG    root            SDK update checks are disabled.

@@ -1,0 +1,21 @@
+2025-03-04 19:30:41,675 DEBUG    root            Loaded Command Group: ['gcloud', 'builds']
+2025-03-04 19:30:41,785 DEBUG    root            Loaded Command Group: ['gcloud', 'builds', 'submit']
+2025-03-04 19:30:41,906 DEBUG    root            Running [gcloud.builds.submit] with arguments: [--tag: "gcr.io/tmdk-ai/streamlit-app"]
+2025-03-04 19:30:41,907 DEBUG    root            (gcloud.builds.submit) Invalid value for [source]: Dockerfile required when specifying --tag
+Traceback (most recent call last):
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 981, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 934, in Run
+    resources = command_instance.Run(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tools/google-cloud-sdk/lib/surface/builds/submit.py", line 223, in Run
+    build_config = submit_util.CreateBuildConfig(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/command_lib/builds/submit_util.py", line 643, in CreateBuildConfig
+    build_config = _SetBuildSteps(
+                   ^^^^^^^^^^^^^^^
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/command_lib/builds/submit_util.py", line 186, in _SetBuildSteps
+    raise c_exceptions.InvalidArgumentException(
+googlecloudsdk.calliope.exceptions.InvalidArgumentException: Invalid value for [source]: Dockerfile required when specifying --tag
+2025-03-04 19:30:41,938 ERROR    root            (gcloud.builds.submit) Invalid value for [source]: Dockerfile required when specifying --tag
