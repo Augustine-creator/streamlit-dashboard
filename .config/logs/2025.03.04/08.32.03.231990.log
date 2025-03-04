@@ -1,0 +1,72 @@
+2025-03-04 08:32:03,233 DEBUG    root            Loaded Command Group: ['gcloud', 'services']
+2025-03-04 08:32:03,242 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'enable']
+2025-03-04 08:32:03,245 DEBUG    root            Running [gcloud.services.enable] with arguments: [--project: "tmdk-ai", SERVICE:1: "['run.googleapis.com']"]
+2025-03-04 08:32:03,278 DEBUG    root            (gcloud.services.enable) You do not currently have an active account selected.
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials.
+
+If you have already logged in with a different account, run:
+
+  $ gcloud config set account ACCOUNT
+
+to select an already authenticated account to use.
+Traceback (most recent call last):
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 981, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 934, in Run
+    resources = command_instance.Run(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tools/google-cloud-sdk/lib/surface/services/enable.py", line 201, in Run
+    op = serviceusage.EnableApiCall(project, args.service[0])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/api_lib/services/serviceusage.py", line 658, in EnableApiCall
+    client = _GetClientInstance()
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/api_lib/services/serviceusage.py", line 1184, in _GetClientInstance
+    http_client = transports.GetApitoolsTransport(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/core/credentials/transports.py", line 80, in GetApitoolsTransport
+    session = requests.GetSession(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/core/credentials/requests.py", line 84, in GetSession
+    session = request_wrapper.WrapCredentials(session,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/core/credentials/transport.py", line 126, in WrapCredentials
+    creds = store.LoadIfEnabled(allow_account_impersonation, use_google_auth)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py", line 636, in LoadIfEnabled
+    return Load(
+           ^^^^^
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py", line 876, in Load
+    cred = _Load(
+           ^^^^^^
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py", line 1058, in _Load
+    raise creds_exceptions.NoActiveAccountException(
+googlecloudsdk.core.credentials.exceptions.NoActiveAccountException: You do not currently have an active account selected.
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials.
+
+If you have already logged in with a different account, run:
+
+  $ gcloud config set account ACCOUNT
+
+to select an already authenticated account to use.
+2025-03-04 08:32:03,286 ERROR    root            (gcloud.services.enable) You do not currently have an active account selected.
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials.
+
+If you have already logged in with a different account, run:
+
+  $ gcloud config set account ACCOUNT
+
+to select an already authenticated account to use.

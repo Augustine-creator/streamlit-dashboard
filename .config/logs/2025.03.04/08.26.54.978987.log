@@ -1,0 +1,45 @@
+2025-03-04 08:26:54,996 DEBUG    root            Loaded Command Group: ['gcloud', 'services']
+2025-03-04 08:26:55,042 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'enable']
+2025-03-04 08:26:55,054 DEBUG    root            Running [gcloud.services.enable] with arguments: [SERVICE:1: "['run.googleapis.com']"]
+2025-03-04 08:26:55,058 DEBUG    root            (gcloud.services.enable) The required property [project] is not currently set.
+It can be set on a per-command basis by re-running your command with the [--project] flag.
+
+You may set it for your current workspace by running:
+
+  $ gcloud config set project VALUE
+
+or it can be set temporarily by the environment variable [CLOUDSDK_CORE_PROJECT]
+Traceback (most recent call last):
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 981, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 934, in Run
+    resources = command_instance.Run(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tools/google-cloud-sdk/lib/surface/services/enable.py", line 199, in Run
+    project = properties.VALUES.core.project.Get(required=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/core/properties.py", line 4153, in Get
+    property_value = self.GetPropertyValue(required, validate)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/core/properties.py", line 4172, in GetPropertyValue
+    property_value = _GetProperty(self,
+                     ^^^^^^^^^^^^^^^^^^
+  File "/tools/google-cloud-sdk/lib/googlecloudsdk/core/properties.py", line 4505, in _GetProperty
+    raise RequiredPropertyError(prop, flag=flag_to_use)
+googlecloudsdk.core.properties.RequiredPropertyError: The required property [project] is not currently set.
+It can be set on a per-command basis by re-running your command with the [--project] flag.
+
+You may set it for your current workspace by running:
+
+  $ gcloud config set project VALUE
+
+or it can be set temporarily by the environment variable [CLOUDSDK_CORE_PROJECT]
+2025-03-04 08:26:55,068 ERROR    root            (gcloud.services.enable) The required property [project] is not currently set.
+It can be set on a per-command basis by re-running your command with the [--project] flag.
+
+You may set it for your current workspace by running:
+
+  $ gcloud config set project VALUE
+
+or it can be set temporarily by the environment variable [CLOUDSDK_CORE_PROJECT]

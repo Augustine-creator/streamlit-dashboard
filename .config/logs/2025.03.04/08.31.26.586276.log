@@ -1,0 +1,8 @@
+2025-03-04 08:31:26,590 DEBUG    root            Loaded Command Group: ['gcloud', 'config']
+2025-03-04 08:31:26,740 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'set']
+2025-03-04 08:31:26,743 DEBUG    root            Running [gcloud.config.set] with arguments: [SECTION/PROPERTY: "project", VALUE: "tmdk-ai"]
+2025-03-04 08:31:26,747 INFO     ___FILE_ONLY___ Updated property [core/project].
+
+2025-03-04 08:31:26,747 DEBUG    root            Chosen display Format:default
+2025-03-04 08:31:26,748 INFO     root            Display format: "default"
+2025-03-04 08:31:26,749 DEBUG    root            SDK update checks are disabled.

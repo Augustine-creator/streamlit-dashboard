@@ -1,0 +1,8 @@
+2025-03-04 08:35:40,090 DEBUG    root            Loaded Command Group: ['gcloud', 'services']
+2025-03-04 08:35:40,102 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'enable']
+2025-03-04 08:35:40,109 DEBUG    root            Running [gcloud.services.enable] with arguments: [--project: "tmdk-ai", SERVICE:1: "['run.googleapis.com']"]
+2025-03-04 08:35:40,198 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): serviceusage.googleapis.com:443
+2025-03-04 08:35:40,488 DEBUG    urllib3.connectionpool https://serviceusage.googleapis.com:443 "POST /v1/projects/tmdk-ai/services/run.googleapis.com:enable?alt=json HTTP/11" 200 None
+2025-03-04 08:35:40,493 DEBUG    root            Chosen display Format:none
+2025-03-04 08:35:40,493 INFO     root            Display format: "none"
+2025-03-04 08:35:40,494 DEBUG    root            SDK update checks are disabled.
