@@ -1,0 +1,7 @@
+streamlit
+pandas
+plotly
+pyngrok
+openai
+gspread
+google-auth
